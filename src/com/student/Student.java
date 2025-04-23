@@ -21,11 +21,13 @@ public class Student {
     }
 
     public void enrollCourse(String course){
-        if(!courses.contains(course)){
-            courses.add(course);
-            System.out.println("Student is enrolled for course " + course + " successfully");
-        } else {
-            System.err.println("Student already enrolled for course " + course);
+        if(validateCourseName(course)) {
+            if (!courses.contains(course)) {
+                courses.add(course);
+                System.out.println("Student is enrolled for course " + course + " successfully");
+            } else {
+                System.err.println("Student already enrolled for course " + course);
+            }
         }
     }
     public void printStudentInfo(){
@@ -35,7 +37,7 @@ public class Student {
         System.out.println("Enrolled for course : " + courses);
     }
 
-    //Validation Method
+    //Validation Methods
     private boolean validateAge(int age){
         if(age>=19 && age<=35){
             return true;
@@ -61,6 +63,15 @@ public class Student {
             return true;
         }else{
             System.out.println("Invalid Student ID");
+            return false;
+        }
+    }
+
+    private boolean validateCourseName(String course){
+        if(course.equalsIgnoreCase("Java") || course.equalsIgnoreCase("DSA") || course.equalsIgnoreCase("DevOps")){
+            return true;
+        }else {
+            System.out.println("Invalid course name !! Please select course from the list [Java, DSA, DevOps]");
             return false;
         }
     }
