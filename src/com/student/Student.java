@@ -75,4 +75,25 @@ public class Student {
             return false;
         }
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public List<String> getCourses() {
+        return courses;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [name=" + name + " Age=" + age + " studentId=" +studentId+ "]";
+    }
 }
