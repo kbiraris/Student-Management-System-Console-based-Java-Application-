@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main1 {
+public class MainWithList {
 
     private static List<Student> studentList;
     public static void main(String[] args) {
